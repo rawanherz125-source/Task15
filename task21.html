@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px;
+            background: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .newsletter {
+            width: 100%;
+            max-width: 750px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 10px;
+            padding: 10px;
+            background: #ddd;
+            border-radius: 10px;
+        }
+
+        .info {
+            background: #695cff;
+            color: white;
+            padding: 16px 14px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .info h1 {
+            font-size: 30px;
+            margin: 0 0 5px;
+        }
+
+        .info h3 {
+            margin: 0 0 12px;
+        }
+        .info p {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .info small {
+            font-size: 10px;
+        }
+
+        form {
+            background: white;
+            padding: 30px 24px 22px;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 25px;
+        }
+
+        label {
+            display: block;
+            color: #777;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #ddd;
+            padding: 10px;
+            font: inherit;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        button {
+            border: 0;
+            border-radius: 5px;
+            background: #695cff;
+            color: white;
+            padding: 11px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .newsletter {
+                grid-template-columns: 1fr;
+            }
+
+            .info {
+                min-height: auto;
+            }
+
+            .info small {
+                margin-top: 15px;
+            }
+            form {
+                padding: 20px 15px;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="newsletter">
+        <aside class="info">
+            <div>
+                <h1>Loved</h1>
+                <h3>Our service ?!</h3>
+                <p>
+                    Your big family is waiting for you.
+                    <br>
+                    Join now for our newsletter!
+                </p>
+            </div>
+
+            <small>+201-234-5678 | E-mail: news.com</small>
+        </aside>
+        <form id="newsletterForm">
+            <div>
+                <label for="name">Full Name</label>
+                <input id="name" type="text" placeholder="Joe" required>
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" required>
+            </div>
+
+            <div class="full">
+                <label for="comments">Comments</label>
+                <textarea id="comments"></textarea>
+            </div>
+
+            <button class="full" type="submit">JOIN</button>
+
+        </form>
+
+    </div>
+    <script>
+        document.getElementById("newsletterForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert("Thank you for joining!");
+            });
+    </script>
+
+</body>
+</html>

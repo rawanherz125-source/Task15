@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Input</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        .chatbar {
+            max-width: 850px;
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 10px;
+            border: 1px solid #888;
+            border-radius: 12px;
+            background: #f8f8f8;
+        }
+
+        .tools {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #2995ff;
+            font-size: 21px;
+        }
+
+        .message {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            border-radius: 30px;
+            padding: 10px 14px;
+        }
+
+        .message input {
+            border: 0;
+            outline: 0;
+            width: 100%;
+            min-width: 0;
+            font-size: 13px;
+        }
+
+        .emoji {
+            font-size: 21px;
+        }
+
+        .like {
+            border: 0;
+            border-radius: 50%;
+            background: #398bfa;
+            color: white;
+            width: 38px;
+            height: 38px;
+            font-size: 20px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .chatbar {
+                gap: 7px;
+                padding: 10px 7px;
+            }
+
+            .tools {
+                gap: 7px;
+                font-size: 17px;
+            }
+
+            .message {
+                padding: 10px;
+            }
+
+            .emoji {
+                font-size: 17px;
+            }
+
+            .like {
+                width: 32px;
+                height: 32px;
+                font-size: 17px;
+            }
+
+            .hide-small {
+                display: none;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .chatbar {
+                gap: 5px;
+            }
+
+            .message input {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chatbar">
+
+        <div class="tools">
+            <span>✚</span>
+            <span>▧</span>
+            <span class="hide-small">📎</span>
+            <span class="hide-small">⬆</span>
+        </div>
+
+        <div class="message">
+            <input type="text" placeholder="Type your message ...">
+            <span class="emoji">☻</span>
+        </div>
+
+        <button class="like" type="button">👍</button>
+
+    </div>
+
+</body>
+</html>

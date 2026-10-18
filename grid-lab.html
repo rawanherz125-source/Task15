@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task 1</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; padding: 20px; }
+
+  .box { border-radius: 6px; color: #fff; font-weight: bold;
+         text-align: center; padding: 10px; }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 50px 400px 100px;
+    gap: 8px;
+  }
+  .nav    { grid-column: 1 / -1; background: #e97fc6; }
+  .side   { background: #e8357e; }
+  .c1     { background: #e0538f; }
+  .c2     { background: #d94fa5; }
+  .c3     { background: #e0499a; }
+  .footer { grid-column: 1 / -1; background: #b0268c; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="box nav">NAVBAR</div>
+    <div class="box side">SIDEBAR</div>
+    <div class="box c1">CONTENT 1</div>
+    <div class="box c2">CONTENT 2</div>
+    <div class="box c3">CONTENT 3</div>
+    <div class="box footer">FOOTER</div>
+  </div>
+</body>
+</html>

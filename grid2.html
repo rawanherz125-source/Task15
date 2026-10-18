@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task 2</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; padding: 20px; }
+
+  .box { border-radius: 6px; color: #333; font-weight: bold;
+         text-align: center; padding: 10px; }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 40px 200px 200px 100px;
+    grid-template-areas:
+      "nav  nav  nav  nav"
+      "side main main main"
+      "side c1   c2   c3"
+      "side footer footer footer";
+    gap: 8px;
+  }
+  .nav    { grid-area: nav;    background: #b3f7e4; }
+  .side   { grid-area: side;   background: #74f9fb; }
+  .main   { grid-area: main;   background: #9efafc; }
+  .c1     { grid-area: c1;     background: #8cfad9; }
+  .c2     { grid-area: c2;     background: #8cfad9; }
+  .c3     { grid-area: c3;     background: #94fbb5; }
+  .footer { grid-area: footer; background: #6be0b2; }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "nav"
+        "side"
+        "main"
+        "c1"
+        "c2"
+        "c3"
+        "footer";
+    }
+    .main { min-height: 150px; }
+    .c1, .c2, .c3 { min-height: 70px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="box nav">NAVBAR</div>
+    <div class="box side">SIDEBAR</div>
+    <div class="box main">MAIN</div>
+    <div class="box c1">CONTENT 1</div>
+    <div class="box c2">CONTENT 2</div>
+    <div class="box c3">CONTENT 3</div>
+    <div class="box footer">FOOTER</div>
+  </div>
+</body>
+</html>
